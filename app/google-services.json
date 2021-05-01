@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "275989940540",
+    "project_id": "covid-tweets-820fc",
+    "storage_bucket": "covid-tweets-820fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275989940540:android:c55bc674c773746b993639",
+        "android_client_info": {
+          "package_name": "com.example.dell.covidtweets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275989940540-u4b0c6smiph1d04a59trik189g12gbui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEFG12NDjXvjX2x0BHZ-je0sJqc8VU8k8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275989940540-u4b0c6smiph1d04a59trik189g12gbui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

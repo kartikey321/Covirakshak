@@ -27,8 +27,8 @@
             android:layout_height="wrap_content"
             android:hint="password"
             android:inputType="textPassword"/>
-        <Button
-            android:id="@+id/btn_log_in"
+          <Button
+              android:id="@+id/button1_log"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"

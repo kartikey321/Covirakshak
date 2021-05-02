@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     var btn_sign_up:Button?=null
-    var btnlogin:Button?=null
+    var buttton1login:Button?=null
     var tv_password:TextView?=null
     var tv_username:TextView?=null
     var forgotpassword:TextView?=null
@@ -28,10 +28,10 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         auth = FirebaseAuth.getInstance()
         btn_sign_up = findViewById<View>(R.id.btn_sign_up) as Button
-        btnlogin = findViewById<View>(R.id.btn_log_in) as Button
+        buttton1login = findViewById<View>(R.id.button1_log) as Button
         tv_username = findViewById<View>(R.id.tv_username) as TextView
         tv_password = findViewById<View>(R.id.tv_password) as TextView
         forgotpassword = findViewById<View>(R.id.forgotpassword) as TextView
@@ -62,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
                       }
                   }*/
         }
-        btnlogin!!.setOnClickListener{
+        buttton1login!!.setOnClickListener{
             doLogin()
         }
 

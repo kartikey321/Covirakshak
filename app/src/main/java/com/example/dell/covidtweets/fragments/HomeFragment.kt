@@ -9,10 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import com.example.dell.covidtweets.LoginActivity
-import com.example.dell.covidtweets.R
-import com.example.dell.covidtweets.SearchActivity
-import com.example.dell.covidtweets.SearchResultsActivity
+import androidx.viewpager2.widget.ViewPager2
+import com.example.dell.covidtweets.*
+import me.relex.circleindicator.CircleIndicator3
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +24,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
+    private var titlesList= mutableListOf<String>()
+    private var imagesList= mutableListOf<Int>()
+    var viewpager2:ViewPager2?=null
+
     var searchbtn:ImageView?=null
     var callbtn:ImageView?=null
     var button3:Button?=null
@@ -64,7 +67,14 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        postToList()
+
         val v = inflater.inflate(R.layout.fragment_home, container, false)
+        viewpager2=v.findViewById(R.id.viewpager2) as ViewPager2
+        viewpager2!!.adapter= ViewPagerAdapter(titlesList,imagesList)
+        viewpager2!!.orientation= ViewPager2.ORIENTATION_HORIZONTAL
+        var indicator=v.findViewById<CircleIndicator3>(R.id.indicator)
+        indicator.setViewPager(viewpager2)
         searchbtn=v.findViewById<View>(R.id.imageView) as ImageView
         callbtn=v.findViewById<View>(R.id.imageView2) as ImageView
         button3=v.findViewById<View>(R.id.button3) as Button
@@ -208,6 +218,19 @@ class HomeFragment : Fragment() {
             startActivity(intent)        }
 
         return v
+    }
+    private fun addToList(title:String,image:Int){
+        titlesList.add(title)
+        imagesList.add(image)
+
+
+    }
+
+    private fun postToList(){
+            addToList("Jordan detects three cases of Indian COVID-19 variant, reports minister",R.drawable.imgslider1)
+            addToList("Apply the law to accelerate Covaxin output: Legal experts say sufficient legal provisions to ask several private companies to make the vaccine",R.drawable.imageslider2)
+        addToList("U.S. administers 243.5 million doses of COVID-19 vaccines, reports CDC",R.drawable.imageslider3)
+
     }
 
     companion object {

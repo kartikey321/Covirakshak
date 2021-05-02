@@ -76,7 +76,7 @@ class SearchResultsActivity : AppCompatActivity() {
             db.collection("data")
                 .whereEqualTo("State", state)
                 .whereEqualTo("City", city)
-                .whereEqualTo("resource subtype", resources)
+               .whereEqualTo("resource subtype", resources)
                 .get()
                 .addOnSuccessListener { documents ->
                     for (document in documents) {
@@ -108,7 +108,7 @@ class SearchResultsActivity : AppCompatActivity() {
                     Log.w("TAG", "Error getting documents: ", exception)
                 }
         }
-        if( state==" " && city!=" " && resources==" ") {
+       else if( state==" " && city!=" " && resources==" ") {
             db.collection("data")
                // .whereEqualTo("State", state)
                 .whereEqualTo("City", city)
@@ -145,7 +145,7 @@ class SearchResultsActivity : AppCompatActivity() {
                 }
         }
 
-        if( state==" " && city==" " && resources!=" ") {
+     else if( state.equals(" ") && city.equals(" ") && !(resources.equals(""))) {
             db.collection("data")
                // .whereEqualTo("State", state)
               //  .whereEqualTo("City", city)

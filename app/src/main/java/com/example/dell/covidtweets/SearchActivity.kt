@@ -9,7 +9,9 @@ import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
 import com.example.dell.covidtweets.R
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class SearchActivity : AppCompatActivity() {
     var searchbtn: Button?=null
@@ -36,10 +38,16 @@ class SearchActivity : AppCompatActivity() {
             val city = cityet!!.text.toString()
             val resources= resourcetype!!.text.toString()
 
+            val ref: Query = FirebaseFirestore.getInstance().collection("data")
+                .whereEqualTo("State", state)
+                .whereEqualTo("City", city)
+                .whereEqualTo("resource subtype", resources)
+
             val intent = Intent(this, SearchResultsActivity::class.java).apply {
                 putExtra("state",state)
                 putExtra("city",city)
                 putExtra("resources",resources)
+                putExtra("ref",ref.toString())
             }
             startActivity(intent)
 

@@ -72,7 +72,6 @@ class SearchResultsActivity : AppCompatActivity() {
         val state=intent.getStringExtra("state")
         val city= intent.getStringExtra("city")
         val resources= intent.getStringExtra("resources")
-        if( state!=" " && city!=" " && resources!=" ") {
             db.collection("data")
                 .whereEqualTo("State", state)
                 .whereEqualTo("City", city)
@@ -107,81 +106,10 @@ class SearchResultsActivity : AppCompatActivity() {
 
                     Log.w("TAG", "Error getting documents: ", exception)
                 }
-        }
-       else if( state==" " && city!=" " && resources==" ") {
-            db.collection("data")
-               // .whereEqualTo("State", state)
-                .whereEqualTo("City", city)
-               // .whereEqualTo("resource subtype", resources)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val title = document.getString("details")
-                        val address = document.getString("address")
-                        val phoneno = document.getString("contact number")
-                        val currtime = document.getString("current time")
-                        val dateFormat = SimpleDateFormat("hh:mm a")
 
 
-//                    Toast.makeText(this,title+","+address+","+phoneno, Toast.LENGTH_SHORT).show()
-
-                        if (title != null) {
-                            if (address != null) {
-                                if (phoneno != null) {
-//                                Toast.makeText(this,document.data.toString(), Toast.LENGTH_SHORT).show()
-
-                                    addToList(title, address, phoneno)
-                                }
-                            }
-                        }
-
-                        Log.d("TAG", "${document.id} => ${document.data}")
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    Toast.makeText(this, "failiure", Toast.LENGTH_SHORT).show()
-
-                    Log.w("TAG", "Error getting documents: ", exception)
-                }
-        }
-
-     else if( state.equals(" ") && city.equals(" ") && !(resources.equals(""))) {
-            db.collection("data")
-               // .whereEqualTo("State", state)
-              //  .whereEqualTo("City", city)
-                .whereEqualTo("resource type", resources)
-                .whereEqualTo("resource subtype", resources)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val title = document.getString("details")
-                        val address = document.getString("address")
-                        val phoneno = document.getString("contact number")
-                        val currtime = document.getString("current time")
-                        val dateFormat = SimpleDateFormat("hh:mm a")
 
 
-//                    Toast.makeText(this,title+","+address+","+phoneno, Toast.LENGTH_SHORT).show()
-
-                        if (title != null) {
-                            if (address != null) {
-                                if (phoneno != null) {
-//                                Toast.makeText(this,document.data.toString(), Toast.LENGTH_SHORT).show()
-
-                                    addToList(title, address, phoneno)
-                                }
-                            }
-                        }
-
-                        Log.d("TAG", "${document.id} => ${document.data}")
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    Toast.makeText(this, "failiure", Toast.LENGTH_SHORT).show()
-
-                    Log.w("TAG", "Error getting documents: ", exception)
-                }
-        }
 
     }
 

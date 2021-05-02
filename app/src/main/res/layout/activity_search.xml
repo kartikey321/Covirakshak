@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
+            android:id="@+id/statelist"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="State"/>
@@ -40,8 +40,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView9">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView1"
+        <EditText
+            android:id="@+id/cityet"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="City" />
@@ -59,15 +59,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView8">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView4"
+        <EditText
+            android:id="@+id/resourcetype"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="What are you looking for?" />
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"

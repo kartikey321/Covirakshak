@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.example.dell.covidtweets.LoginActivity
 import com.example.dell.covidtweets.R
 import com.example.dell.covidtweets.SearchActivity
+import com.example.dell.covidtweets.SearchResultsActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +27,26 @@ private const val ARG_PARAM2 = "param2"
 class HomeFragment : Fragment() {
     var searchbtn:ImageView?=null
     var callbtn:ImageView?=null
+    var button3:Button?=null
+    var button4:Button?=null
+    var button5:Button?=null
+    var button6:Button?=null
+    var button7:Button?=null
+    var button8:Button?=null
+
+    var medicine:Button?=null
+    var beds:Button?=null
+    var plasma:Button?=null
+    var icu:Button?=null
+    var oxyzen:Button?=null
+    var catering:Button?=null
+
+
+
+
+
+
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -46,6 +67,135 @@ class HomeFragment : Fragment() {
         val v = inflater.inflate(R.layout.fragment_home, container, false)
         searchbtn=v.findViewById<View>(R.id.imageView) as ImageView
         callbtn=v.findViewById<View>(R.id.imageView2) as ImageView
+        button3=v.findViewById<View>(R.id.button3) as Button
+        button4=v.findViewById<View>(R.id.button4) as Button
+        button5=v.findViewById<View>(R.id.button5) as Button
+        button6=v.findViewById<View>(R.id.button6) as Button
+        button7=v.findViewById<View>(R.id.button7) as Button
+        button8=v.findViewById<View>(R.id.button8) as Button
+
+        medicine=v.findViewById<View>(R.id.medicine) as Button
+        beds=v.findViewById<View>(R.id.beds) as Button
+        plasma=v.findViewById<View>(R.id.plasma) as Button
+        icu=v.findViewById<View>(R.id.icu) as Button
+        oxyzen=v.findViewById<View>(R.id.oxyzen) as Button
+        catering=v.findViewById<View>(R.id.catering) as Button
+
+
+
+
+
+
+
+        button3!!.setOnClickListener{
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city","Delhi")
+                putExtra("resources"," ")
+            }
+            startActivity(intent)
+        }
+        button4!!.setOnClickListener{
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city","Noida")
+                putExtra("resources"," ")
+            }
+
+            startActivity(intent)
+        }
+        button5!!.setOnClickListener{
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city","Gurgaon")
+                putExtra("resources"," ")
+            }
+            startActivity(intent)
+        }
+        button6!!.setOnClickListener{
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city","Mumbai")
+                putExtra("resources"," ")
+            }
+            startActivity(intent)
+        }
+        button7!!.setOnClickListener{
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city","Bangalore")
+                putExtra("resources"," ")
+            }
+            startActivity(intent)
+        }
+        button8!!.setOnClickListener{
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city","Hyderabad")
+                putExtra("resources"," ")
+            }
+            startActivity(intent)
+        }
+
+        medicine!!.setOnClickListener {
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city"," ")
+                putExtra("resources","medicine")
+            }
+            startActivity(intent)
+
+        }
+        beds!!.setOnClickListener {
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city"," ")
+                putExtra("resources","beds")
+            }
+            startActivity(intent)
+
+        }
+
+        plasma!!.setOnClickListener {
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city"," ")
+                putExtra("resources","plasma")
+            }
+            startActivity(intent)
+
+        }
+
+        icu!!.setOnClickListener {
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city"," ")
+                putExtra("resources","icu")
+            }
+            startActivity(intent)
+
+        }
+
+        oxyzen!!.setOnClickListener {
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city"," ")
+                putExtra("resources","oxyzen")
+            }
+            startActivity(intent)
+
+        }
+
+        catering!!.setOnClickListener {
+            val intent = Intent(v.context, SearchResultsActivity::class.java).apply {
+                putExtra("state"," ")
+                putExtra("city"," ")
+                putExtra("resources","catering")
+            }
+            startActivity(intent)
+
+        }
+
 
         callbtn!!.setOnClickListener{
             val callIntent= Intent(Intent.ACTION_CALL)

@@ -1,14 +1,48 @@
-package com.example.dell.covidtweets;
+package com.example.dell.covidtweets
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.EditText
+import com.example.dell.covidtweets.R
+import com.google.firebase.firestore.FirebaseFirestore
 
-import android.os.Bundle;
+class SearchActivity : AppCompatActivity() {
+    var searchbtn: Button?=null
+    var cityet:EditText?=null
+    var resourcetype:EditText?=null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_search)
 
-public class SearchActivity extends AppCompatActivity {
+        searchbtn=findViewById<View>(R.id.search)as Button
+        cityet=findViewById<View>(R.id.cityet)as EditText
+        resourcetype=findViewById<View>(R.id.resourcetype)as EditText
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+
+
+        val autotextView = findViewById<AutoCompleteTextView>(R.id.statelist)
+        val states = resources.getStringArray(R.array.States)
+        val adapter = ArrayAdapter(this,
+            android.R.layout.simple_list_item_1, states)
+        autotextView.setAdapter(adapter)
+
+        searchbtn!!.setOnClickListener{
+            val state =  autotextView.getText().toString()
+            val city = cityet!!.text.toString()
+            val resources= resourcetype!!.text.toString()
+
+            val intent = Intent(this, SearchResultsActivity::class.java).apply {
+                putExtra("state",state)
+                putExtra("city",city)
+                putExtra("resources",resources)
+            }
+            startActivity(intent)
+
+        }
     }
 }

@@ -14,6 +14,9 @@ import com.example.dell.covidtweets.R
 import com.example.dell.covidtweets.SearchActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import java.sql.Timestamp
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -122,6 +125,8 @@ class SearchFragment : Fragment() {
             val name=contact_name!!.text.toString()
             val phoneno= contact_no!!.text.toString()
             val details= details!!.text.toString()
+            val sdf = SimpleDateFormat("hh:mm a")
+            val currentDate = sdf.format(Date())
 
             val timestamp = Timestamp(System.currentTimeMillis())
             val entreddata = hashMapOf(
@@ -133,6 +138,7 @@ class SearchFragment : Fragment() {
                     "details" to details,
                 "name" to name,
                 "contact number" to phoneno,
+                "current time" to currentDate,
                 "timestamp" to timestamp
 
             )
@@ -143,8 +149,7 @@ class SearchFragment : Fragment() {
                         .add(entreddata)
                         .addOnSuccessListener { documentReference ->
                             Toast.makeText(activity, "Thank you for sharing this information with us", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(activity, HomeFragment::class.java)
-                            startActivity(intent)
+
                             Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                         }
                         .addOnFailureListener { e ->

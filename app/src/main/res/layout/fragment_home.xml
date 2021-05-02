@@ -176,14 +176,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/medicine"
                     android:layout_width="193dp"
                     android:layout_height="193dp"
                     android:layout_weight="1"
                     android:background="@drawable/group18" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/beds"
                     android:layout_width="193dp"
                     android:layout_height="193dp"
                     android:layout_weight="1"
@@ -196,14 +196,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button10"
+                    android:id="@+id/plasma"
                     android:layout_width="193dp"
                     android:layout_height="193dp"
                     android:layout_weight="1"
                     android:background="@drawable/group20" />
 
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/icu"
                     android:layout_width="193dp"
                     android:layout_height="193dp"
                     android:layout_weight="1"
@@ -216,14 +216,14 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button12"
+                    android:id="@+id/oxyzen"
                     android:layout_width="193dp"
                     android:layout_height="193dp"
                     android:layout_weight="1"
                     android:background="@drawable/group22" />
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/catering"
                     android:layout_width="193dp"
                     android:layout_height="193dp"
                     android:layout_weight="1"
